@@ -1,0 +1,25 @@
+[project]
+name = "keenctl"
+version = "0.1.0"
+description = "Lightweight, zero-daemon control plane CLI and agent skill for Keenetic routers"
+readme = "README.md"
+authors = [
+    { name = "pikerr", email = "peter.bobov@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+]
+
+[project.scripts]
+keenctl = "keenctl:main"
+keen = "keenctl:main"
+
+[build-system]
+requires = ["uv_build>=0.12.13,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
